@@ -70,6 +70,7 @@ CustomInput(
 | `inputFormatters` | `List<TextInputFormatter>?` | Input constraints |
 | `keyboardType` | `TextInputType?` | Keyboard type (default: `TextInputType.text`) |
 | `readOnly` | `bool` | Whether the field is read-only |
+| `obscureText` | `bool` | Whether the field is obscure |
 | `requestError` | `bool` | Toggles request error appearance |
 | `autofocus` | `bool?` | Autofocuses the field on build |
 | `enableCounter` | `bool` | Shows character counter |

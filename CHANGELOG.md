@@ -1,3 +1,3 @@
-## 0.0.1
+## 0.0.2
 
-* Initial upload of the first version
+* Added text obscurity
