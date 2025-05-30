@@ -55,6 +55,9 @@ class CustomTextfield extends StatefulWidget {
   /// Whether the field should automatically gain focus.
   final bool? autofocus;
 
+  /// Whether the field has an obscure text.
+  final bool obscureText;
+
   /// Whether to display the character counter.
   final bool enableCounter;
 
@@ -141,6 +144,7 @@ class CustomTextfield extends StatefulWidget {
     this.readOnly = false,
     this.requestError = false,
     this.autofocus = false,
+    this.obscureText = false,
     this.enableCounter = false,
     this.autovalidateMode,
     this.fonSize,
@@ -280,6 +284,7 @@ class _CustomTextfieldState extends State<CustomTextfield> {
                             fontWeight: FontWeight.w400,
                             height: 1,
                           ),
+                          obscureText: widget.obscureText,
                           maxLength: widget.maxLength,
                           autofocus: widget.autofocus!,
                           controller: widget.controller,
