@@ -1,7 +1,7 @@
 name: custom_textfield
 description: "A highly customizable text field"
 version: 0.0.1
-homepage: 
+homepage: https://github.com/Chemsdine223/custom_textfield
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
