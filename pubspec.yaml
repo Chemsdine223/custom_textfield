@@ -1,5 +1,7 @@
 name: custom_textfield_input
-description: "A highly customizable text field"
+description: >
+  A customizable Flutter input widget for forms with validation, styling, and error handling; ideal for consistent UI across apps.
+
 version: 0.0.2
 homepage: https://github.com/Chemsdine223/custom_textfield
 
