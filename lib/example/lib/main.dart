@@ -2,19 +2,33 @@ import 'package:custom_textfield_input/custom_textfield.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(home: MyApp()));
+  runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
+/// The root widget of the example app.
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Custom Input Example',
+      home: const ExampleScreen(),
+    );
+  }
 }
 
-class _MyAppState extends State<MyApp> {
-  final controller = TextEditingController();
-  final focusNode = FocusNode();
+/// Demonstrates the usage of CustomInput in a basic UI.
+class ExampleScreen extends StatefulWidget {
+  const ExampleScreen({super.key});
+
+  @override
+  State<ExampleScreen> createState() => _ExampleScreenState();
+}
+
+class _ExampleScreenState extends State<ExampleScreen> {
+  final _controller = TextEditingController();
+  final _focusNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +41,8 @@ class _MyAppState extends State<MyApp> {
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16),
           child: CustomTextfield(
-            controller: controller,
-            focusNode: focusNode,
+            controller: _controller,
+            focusNode: _focusNode,
             hintText: 'Enter your name',
             label: 'Full Name',
             title: 'Name',
