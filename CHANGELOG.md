@@ -1,3 +1,3 @@
-## 0.0.5
+## 0.0.6
 
-* Adding an example
+* Adding an example & Changed the name from CustomTextfield to CustomTextField
