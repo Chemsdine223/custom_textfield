@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-/// Demonstrates the usage of CustomInput in a basic UI.
+/// Demonstrates the usage of CustomTextfield in a basic UI.
 class ExampleScreen extends StatefulWidget {
   const ExampleScreen({super.key});
 
@@ -29,6 +29,7 @@ class ExampleScreen extends StatefulWidget {
 class _ExampleScreenState extends State<ExampleScreen> {
   final _controller = TextEditingController();
   final _focusNode = FocusNode();
+  
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,7 @@ class _ExampleScreenState extends State<ExampleScreen> {
       appBar: AppBar(title: const Text('Custom Textfield Example')),
       body: Padding(
         padding: const EdgeInsets.all(16),
-        child: CustomTextfield(
+        child: CustomTextField(
           controller: _controller,
           focusNode: _focusNode,
           label: 'Email',

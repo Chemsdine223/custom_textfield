@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 
 /// A customizable input widget that supports validation,
 /// custom styling, icons, labels, hint text, and error display.
-class CustomTextfield extends StatefulWidget {
+class CustomTextField extends StatefulWidget {
   /// Controls the text being edited.
   final TextEditingController? controller;
 
@@ -124,8 +124,8 @@ class CustomTextfield extends StatefulWidget {
   /// List of box shadows to apply to the input container.
   final List<BoxShadow>? boxShadow;
 
-  /// Creates a [CustomTextfield] widget.
-  const CustomTextfield({
+  /// Creates a [CustomTextField] widget.
+  const CustomTextField({
     super.key,
     this.controller,
     this.onChanged,
@@ -170,10 +170,10 @@ class CustomTextfield extends StatefulWidget {
   });
 
   @override
-  State<CustomTextfield> createState() => _CustomTextfieldState();
+  State<CustomTextField> createState() => _CustomTextFieldState();
 }
 
-class _CustomTextfieldState extends State<CustomTextfield> {
+class _CustomTextFieldState extends State<CustomTextField> {
   /// Indicates whether the input field currently has focus.
   bool hasFocus = false;
 
