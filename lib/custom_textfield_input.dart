@@ -16,31 +16,34 @@ class CustomTextField extends StatefulWidget {
   /// The focus node for managing focus state.
   final FocusNode focusNode;
 
+  /// TextStyle class for customizing the label TextStyle.
+  final TextStyle? labelStyle;
+
   /// The maximum length of input text.
   final int? maxLength;
 
-  /// Padding around the input field.
+  /// Padding around the CustomTextField.
   final EdgeInsetsGeometry? padding;
 
   /// Text displayed when the input is empty.
   final String? hintText;
 
-  /// Optional label displayed above the input field.
+  /// Optional label displayed above the CustomTextField.
   final String? label;
 
-  /// Title displayed inside the input field (as labelText).
+  /// Title displayed inside the CustomTextField (as labelText).
   final String? title;
 
   /// Error text displayed for request-based errors.
   final String? requestErrorText;
 
-  /// Widget to display before the input field.
+  /// Widget to display before the CustomTextField.
   final Widget? prefixIcon;
 
-  /// Widget to display after the input field.
+  /// Widget to display after the CustomTextField.
   final Widget? suffixIcon;
 
-  /// Formatters applied to the input field.
+  /// Formatters applied to the CustomTextField.
   final List<TextInputFormatter>? inputFormatters;
 
   /// Type of keyboard to use for the input.
@@ -65,22 +68,28 @@ class CustomTextField extends StatefulWidget {
   final AutovalidateMode? autovalidateMode;
 
   /// Font size of the input text.
-  final double? fonSize;
+  final double? fontSize;
 
   /// Font size of the error text.
-  final double? errorFonSize;
+  final double? errorFontSize;
 
   /// Font size of the hint text.
-  final double? hintFonSize;
+  final double? hintFontSize;
 
   /// Font size of the title text.
-  final double? titleFonSize;
+  final double? titleFontSize;
 
-  /// Space between the input field and the error message.
+  /// Space between the CustomTextField and the error message.
   final double? errorGap;
 
-  /// Border radius of the input field.
+  /// Border radius of the CustomTextField.
   final double? borderRadius;
+
+  ///  Border of the focused CustomTextField.
+  final double? focusedBorderWidth;
+
+  /// Border width of the unfocused CustomTextField.
+  final double? unFocusedBorderWidth;
 
   /// Font weight of the error text.
   final FontWeight? errorFontWeight;
@@ -100,7 +109,7 @@ class CustomTextField extends StatefulWidget {
   /// Color of the hint text.
   final Color? hintTextColor;
 
-  /// Color of the cursor in the input field.
+  /// Color of the cursor in the CustomTextField.
   final Color? cursorColor;
 
   /// Background color of the input container.
@@ -131,6 +140,7 @@ class CustomTextField extends StatefulWidget {
     this.onChanged,
     this.validator,
     required this.focusNode,
+    this.labelStyle,
     this.maxLength = 32,
     this.padding,
     this.hintText = '',
@@ -147,12 +157,14 @@ class CustomTextField extends StatefulWidget {
     this.obscureText = false,
     this.enableCounter = false,
     this.autovalidateMode,
-    this.fonSize,
-    this.errorFonSize,
-    this.hintFonSize,
-    this.titleFonSize,
+    this.fontSize,
+    this.errorFontSize,
+    this.hintFontSize,
+    this.titleFontSize,
     this.errorGap,
     this.borderRadius,
+    this.focusedBorderWidth,
+    this.unFocusedBorderWidth,
     this.errorFontWeight,
     this.fontWeight,
     this.hintFontWeight,
@@ -174,7 +186,7 @@ class CustomTextField extends StatefulWidget {
 }
 
 class _CustomTextFieldState extends State<CustomTextField> {
-  /// Indicates whether the input field currently has focus.
+  /// Indicates whether the CustomTextField currently has focus.
   bool hasFocus = false;
 
   @override
@@ -207,7 +219,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         return widget.validator?.call(currentValue);
       },
       builder: (state) {
-        /// Whether the input field has a validation error.
+        /// Whether the CustomTextField has a validation error.
         bool hasError = state.hasError;
 
         /// Whether there is a request-based error.
@@ -226,14 +238,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
           children: [
             // Optional label text
             if (widget.label != null && widget.label!.isNotEmpty)
-              Text(
-                widget.label ?? '',
-                style: TextStyle(
-                  color: widget.textColor ?? Colors.black,
-                  fontSize: widget.fonSize ?? 16,
-                  fontWeight: widget.errorFontWeight,
-                ),
-              ),
+              Text(widget.label ?? '', style: widget.labelStyle),
             if (widget.label != null && widget.label!.isNotEmpty)
               const SizedBox(height: 4),
 
@@ -244,7 +249,9 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 boxShadow: widget.boxShadow,
                 borderRadius: BorderRadius.circular(widget.borderRadius ?? 8),
                 border: Border.all(
-                  width: (hasFocus || hasError || requestError) ? 1 : .5,
+                  width: (hasFocus || hasError || requestError)
+                      ? widget.focusedBorderWidth ?? 1
+                      : widget.unFocusedBorderWidth ?? .5,
                   color: hasError || requestError
                       ? widget.errorBorderColor ?? Colors.red
                       : (hasFocus
@@ -264,7 +271,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        // Main input field
+                        // Main CustomTextField
                         TextFormField(
                           onTapOutside: (event) {
                             widget.focusNode.unfocus();
@@ -277,7 +284,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                               ? widget.errorTextColor ?? Colors.red
                               : widget.cursorColor ?? Colors.black,
                           style: TextStyle(
-                            fontSize: widget.fonSize ?? 16,
+                            fontSize: widget.fontSize ?? 16,
                             color: state.hasError || requestError
                                 ? widget.errorTextColor ?? Colors.red
                                 : widget.textColor ?? Colors.black,
@@ -295,7 +302,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                                 ? Text(
                                     widget.title ?? '',
                                     style: TextStyle(
-                                      fontSize: widget.fonSize,
+                                      fontSize: widget.fontSize,
                                       color: state.hasError || requestError
                                           ? widget.titleErrorColor ?? Colors.red
                                           : widget.titleColor ?? Colors.black,
@@ -307,7 +314,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                             hintText: widget.hintText!,
                             hintStyle: TextStyle(
                               fontWeight: widget.hintFontWeight,
-                              fontSize: widget.hintFonSize,
+                              fontSize: widget.hintFontSize,
                               color: hasError || requestError
                                   ? widget.errorTextColor ??
                                       Theme.of(context).colorScheme.error
@@ -341,7 +348,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                       state.errorText ?? widget.requestErrorText ?? '',
                       style: TextStyle(
                         color: widget.errorTextColor ?? Colors.red,
-                        fontSize: widget.errorFonSize ?? 16,
+                        fontSize: widget.errorFontSize ?? 16,
                         height: 0,
                         fontWeight: widget.errorFontWeight,
                       ),

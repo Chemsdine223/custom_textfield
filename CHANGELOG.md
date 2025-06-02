@@ -1,3 +1,3 @@
-## 0.0.7
+## 0.0.8
 
-* Adding an example & Changed the name from CustomTextfield to CustomTextField
+* Spelling check and adding more granular customizations

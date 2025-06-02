@@ -59,6 +59,7 @@ CustomInput(
 | `onChanged` | `ValueChanged<String?>?` | Callback on input change |
 | `validator` | `String? Function(String?)?` | Custom validation logic |
 | `focusNode` | `FocusNode` | Manages focus for the input |
+| `labelStyle` | `TextStyle` | TextStyle class for customizing the label TextStyle |
 | `maxLength` | `int?` | Max input character count (default: `32`) |
 | `padding` | `EdgeInsetsGeometry?` | Padding inside the input container |
 | `hintText` | `String?` | Placeholder text |
@@ -75,9 +76,10 @@ CustomInput(
 | `autofocus` | `bool?` | Autofocuses the field on build |
 | `enableCounter` | `bool` | Shows character counter |
 | `autovalidateMode` | `AutovalidateMode?` | Validation trigger mode |
-| `fonSize`, `hintFonSize`, `errorFonSize`, `titleFonSize` | `double?` | Font sizes |
+| `fontSize`, `hintFontSize`, `errorFontSize`, `titleFontSize` | `double?` | Font sizes |
 | `errorGap` | `double?` | Space between input and error text |
 | `borderRadius` | `double?` | Corner radius for input box |
+| `focusedBorderWidth`, `unfocusedBorderWidth` | `double?` | Border width |
 | `fontWeight`, `hintFontWeight`, `errorFontWeight` | `FontWeight` | Font weights |
 | `textColor`, `hintTextColor`, `errorTextColor`, `cursorColor`, `backgroundColor`, `focusedBorderColor`, `unfocusedBorderColor`, `errorBorderColor`, `titleColor`, `titleErrorColor` | `Color?` | Custom color settings |
 | `boxShadow` | `List<BoxShadow>?` | Box shadow styling |
@@ -87,3 +89,5 @@ CustomInput(
 ## Additional Info
 
 This package is simple to integrate. Download it, import into your project, and enjoy a hassle-free, reusable, highly customizable input field!
+
+For questions, feedback, or contributions, feel free to reach out at chemsdine223@gmail.com or contribute directly via GitHub @Chemsdine223.
