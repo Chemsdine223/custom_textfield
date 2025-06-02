@@ -29,7 +29,6 @@ class ExampleScreen extends StatefulWidget {
 class _ExampleScreenState extends State<ExampleScreen> {
   final _controller = TextEditingController();
   final _focusNode = FocusNode();
-  
 
   @override
   Widget build(BuildContext context) {

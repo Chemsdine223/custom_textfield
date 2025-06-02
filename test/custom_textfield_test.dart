@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  group('CustomTextfield Widget Test', () {
+  group('CustomTextField Widget Test', () {
     testWidgets('renders with hint and label text',
         (WidgetTester tester) async {
       final focusNode = FocusNode();
@@ -12,7 +12,7 @@ void main() {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
-            body: CustomTextfield(
+            body: CustomTextField(
               hintText: 'Enter name',
               label: 'Name',
               controller: controller,
@@ -35,7 +35,7 @@ void main() {
           home: Scaffold(
             body: Form(
               key: formKey,
-              child: CustomTextfield(
+              child: CustomTextField(
                 hintText: 'Enter name',
                 label: 'Name',
                 focusNode: focusNode,
@@ -67,7 +67,7 @@ void main() {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
-            body: CustomTextfield(
+            body: CustomTextField(
               hintText: 'Enter text',
               label: 'Text',
               controller: controller,
