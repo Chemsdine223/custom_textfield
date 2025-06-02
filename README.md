@@ -22,6 +22,12 @@ No prerequisites needed.
 
 ---
 
+## Showcase
+
+![Image](https://github.com/user-attachments/assets/a4162a0b-4550-4cc4-b5b6-1746562b6294)
+
+---
+
 ## Usage
 
 Here's how to use the `CustomInput` widget in your project:
