@@ -53,10 +53,10 @@ packages:
     dependency: "direct main"
     description:
       name: custom_textfield_input
-      sha256: "9c1292d7b55128801dde2e7f1e6841ef57a48b0f445e31ad7718b932bb8ba74d"
+      sha256: "13b4a82f63bf84069d16e0181618e50b27cac6b1be12a7372005348b0f369c8c"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.6"
+    version: "0.0.8"
   fake_async:
     dependency: transitive
     description:

@@ -1,4 +1,4 @@
-import 'package:custom_textfield_input/custom_textfield.dart';
+import 'package:custom_textfield_input/custom_textfield_input.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -58,8 +58,8 @@ class _ExampleScreenState extends State<ExampleScreen> {
                 controller: _usernameController,
                 focusNode: _usernameFocusNode,
                 title: 'Username',
-                titleFonSize: 12,
-                fonSize: 16,
+                titleFontSize: 12,
+                fontSize: 16,
                 hintText: 'Enter your username',
                 onChanged: (value) => print('Input changed: \$value'),
                 validator: (value) {
@@ -81,8 +81,8 @@ class _ExampleScreenState extends State<ExampleScreen> {
                 controller: _emailController,
                 focusNode: _emailFocusNode,
                 label: 'Email',
-                titleFonSize: 12,
-                fonSize: 16,
+                titleFontSize: 12,
+                fontSize: 16,
                 hintText: 'example@example.com',
                 onChanged: (value) => print('Input changed: \$value'),
                 validator: (value) {
@@ -104,8 +104,8 @@ class _ExampleScreenState extends State<ExampleScreen> {
                 controller: passwordController,
                 focusNode: passwordFocusNode,
                 label: 'Password',
-                titleFonSize: 12,
-                fonSize: 16,
+                titleFontSize: 12,
+                fontSize: 16,
                 hintText: 'Enter your password',
                 onChanged: (value) => print('Input changed: \$value'),
                 validator: (value) {
