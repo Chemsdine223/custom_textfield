@@ -213,7 +213,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return FormField<String>(
-      autovalidateMode: AutovalidateMode.onUserInteraction,
+      autovalidateMode: widget.autovalidateMode ?? AutovalidateMode.onUserInteraction,
       validator: (value) {
         final currentValue = widget.controller?.text ?? value ?? '';
         return widget.validator?.call(currentValue);
